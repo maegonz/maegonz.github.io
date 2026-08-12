@@ -1,0 +1,235 @@
+:root {
+  color-scheme: light;
+
+  /* ---- palette: field-log / manga-volume ---- */
+  --ink: #15100d;
+  --ink-soft: #2a211c;
+  --paper: #f2e6cc;
+  --paper-dim: #e7d7b3;
+  --paper-line: rgba(21, 16, 13, 0.14);
+  --blood: #a4181f;
+  --blood-light: #d8241c;
+  --blood-deep: #7c1017;
+  --blood-deepdeep: #430709;
+  --ember: #eea62c;
+  --ember-soft: #f6cf8f;
+
+  /* ---- type ---- */
+  --font-display: "Anton", "Helvetica Neue", sans-serif;
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+  --font-hand: "Caveat", cursive;
+
+  --radius-sm: 4px;
+  --radius-md: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.page {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------------------------------------------
+   Volume marker: the numbering carries meaning —
+   each section is a numbered "issue" in the log.
+---------------------------------------------- */
+.volume-tag {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 14px;
+}
+
+.volume-tag::before {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: var(--ember);
+}
+
+/* ---------------------------------------------
+   Torn halftone divider between volumes.
+   A jagged paper edge over a dot-screen fade.
+---------------------------------------------- */
+.torn-divider {
+  position: relative;
+  height: 46px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.torn-divider--to-paper {
+  background: var(--ink);
+}
+
+.torn-divider--to-paper svg {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.torn-divider--to-ink {
+  background: var(--paper);
+}
+
+.torn-divider--to-ink svg {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.halftone-fade {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--ink) 1.4px, transparent 1.4px);
+  background-size: 7px 7px;
+  opacity: 0.5;
+  mask-image: linear-gradient(to bottom, black, transparent);
+  pointer-events: none;
+}
+
+/* ---------------------------------------------
+   Red diagonal slash — the one bold gesture,
+   used sparingly behind key headings.
+---------------------------------------------- */
+.slash-accent {
+  position: relative;
+  display: inline-block;
+}
+
+.slash-accent::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  right: -10px;
+  top: 46%;
+  height: 0.62em;
+  background: var(--blood-light);
+  transform: skewX(-12deg) translateY(-50%);
+  z-index: -1;
+  opacity: 0.92;
+}
+.accent {
+  color: var(--blood-light);
+  position: relative;
+}
+
+/* ---------------------------------------------
+   Handwritten marginalia — Caveat notes pinned
+   near headings, like reader annotations.
+---------------------------------------------- */
+.marginalia {
+  font-family: var(--font-hand);
+  font-size: 1.28rem;
+  color: var(--blood);
+  transform: rotate(-3deg);
+  display: inline-block;
+}
+
+.marginalia--ink {
+  color: var(--ink-soft);
+}
+
+/* ---------------------------------------------
+   Sections on ink vs paper stock
+---------------------------------------------- */
+.stock-ink {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.stock-paper {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: transform 140ms ease, background 140ms ease, color 140ms ease;
+}
+
+.button-primary {
+  background: var(--blood);
+  border-color: var(--blood);
+  color: var(--paper);
+}
+
+.button-primary:hover {
+  transform: translateY(-2px);
+  background: var(--blood-deep);
+}
+
+.button-secondary {
+  background: transparent;
+  border-color: currentColor;
+}
+
+.button-secondary:hover {
+  transform: translateY(-2px);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.stock-paper .button-secondary {
+  border-color: var(--ink);
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 0 16px;
+  }
+}
