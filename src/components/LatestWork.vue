@@ -5,8 +5,8 @@ const papers = [
     title: 'Spatio-temporal Transformer for Human Motion generation and action description',
     description: 'A look at how vision models fail under adversarial perturbation, and whether attribution methods can actually explain the failure rather than just describe it.',
     tags: ['Transformer', 'Spatio-temporal Attention', 'NLP', 'Diffusion process'],
-    image: '/figures/human_motion_report_first_page.png',
-    report: '/doc/human_motion_report.pdf',
+    image: 'amnl.github.io/public/figures/human_motion_report_first_page.png',
+    report: 'amnl.github.io/public/doc/human_motion_report.pdf',
     code: 'https://github.com/maegonz/Spatio-Temporal-Transformer-for-Human-Motion-tasks'
   },
   {
@@ -14,8 +14,8 @@ const papers = [
     title: 'Quantum GANs: Hybrid Architectures and Convergence Analysis',
     description: 'Pairing classical discriminators with parameterized quantum circuits, and asking whether the resulting generators actually converge faster than their fully classical counterparts.',
     tags: ['Quantum Computing', 'Generative Models', 'Hybrid Architectures'],
-    image: '/figures/qgan_report_first_page.png',
-    report: '/doc/qgan_report.pdf',
+    image: 'amnl.github.io/public/figures/qgan_report_first_page.png',
+    report: 'amnl.github.io/public/doc/qgan_report.pdf',
     code: 'https://github.com/maegonz/Quantum-GAN',
   },
 ]
