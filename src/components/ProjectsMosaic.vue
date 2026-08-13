@@ -1,44 +1,46 @@
 <script setup>
+const base = import.meta.env.BASE_URL
+
 const projects = [
   {
     title: 'Spatial-Temporal Convolutional Networks for Human-Motion Analysis',
-    image: '/figures/animation.gif',
+    image: 'figures/animation.gif',
     tags: ['Computer Vision', 'GNN'],
     link: 'https://github.com/maegonz/spatial-temporal-analysis',
   },
   {
     title: 'Graph Convolutional Networks for Enzyme Classification & Sign Language Recognition',
-    image: '/figures/placidplace-sign-language-7167_512.gif',
+    image: 'figures/placidplace-sign-language-7167_512.gif',
     tags: ['GNN', 'NLP'],
     link: 'https://github.com/maegonz/graph-convolutional-networks',
   },
   {
     title: 'NFL Game Predictions with Transformers',
-    image: '/figures/nfl_preview.gif',
+    image: 'figures/nfl_preview.gif',
     tags: ['Transformers'],
     link: 'https://github.com/maegonz/nfl-transformers',
   },
   {
     title: 'Hybrid Quantum-Classical Classifiers',
-    image: '/figures/decision_boundary_training.gif',
+    image: 'figures/decision_boundary_training.gif',
     tags: ['Quantum Computing'],
     link: 'https://github.com/maegonz/quantum-classifiers',
   },
   {
     title: 'RSNA Intracranial Aneurysm Detection',
-    image: '/figures/rsna_preview.gif',
+    image: 'figures/rsna_preview.gif',
     tags: ['Computer Vision', 'Medical'],
     link: 'https://github.com/maegonz/aneurysm-detection',
   },
   {
     title: 'Cycle Gans for Image-to-Image Translation',
-    image: '/figures/fake_satellite.gif',
+    image: 'figures/fake_satellite.gif',
     tags: ['GANs'],
     link: 'https://github.com/maegonz/Generative-Adversarial-Networks',
   },
   {
     title: 'M1 Thesis on Adversarial Detection Methods',
-    image: '/figures/m1_internship_first_page.png',
+    image: 'figures/m1_internship_first_page.png',
     tags: ['Explainability', 'Adversarial Examples', 'Computer Vision'],
     link: 'https://github.com/maegonz/Generative-Adversarial-Networks',
   },
@@ -55,7 +57,7 @@ const projects = [
       <div class="mosaic-grid">
         <details v-for="p in projects" :key="p.title" class="case-card">
           <summary>
-            <img :src="p.image" :alt="p.title" loading="lazy" />
+            <img :src="base + p.image" :alt="p.title" loading="lazy" />
             <div class="case-meta">
               <h3>{{ p.title }}</h3>
               <div class="case-tags">

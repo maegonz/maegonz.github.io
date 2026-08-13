@@ -1,12 +1,14 @@
 <script setup>
+const base = import.meta.env.BASE_URL
+
 const papers = [
   {
     year: '2026',
     title: 'Spatio-temporal Transformer for Human Motion generation and action description',
     description: 'A look at how vision models fail under adversarial perturbation, and whether attribution methods can actually explain the failure rather than just describe it.',
     tags: ['Transformer', 'Spatio-temporal Attention', 'NLP', 'Diffusion process'],
-    image: '/figures/human_motion_report_first_page.png',
-    report: '/doc/human_motion_report.pdf',
+    image: 'figures/human_motion_report_first_page.png',
+    report: 'doc/human_motion_report.pdf',
     code: 'https://github.com/maegonz/Spatio-Temporal-Transformer-for-Human-Motion-tasks'
   },
   {
@@ -14,8 +16,8 @@ const papers = [
     title: 'Quantum GANs: Hybrid Architectures and Convergence Analysis',
     description: 'Pairing classical discriminators with parameterized quantum circuits, and asking whether the resulting generators actually converge faster than their fully classical counterparts.',
     tags: ['Quantum Computing', 'Generative Models', 'Hybrid Architectures'],
-    image: '/figures/qgan_report_first_page.png',
-    report: '/doc/qgan_report.pdf',
+    image: 'figures/qgan_report_first_page.png',
+    report: 'doc/qgan_report.pdf',
     code: 'https://github.com/maegonz/Quantum-GAN',
   },
 ]
@@ -28,7 +30,7 @@ const papers = [
       <h2 class="latest-title slash-accent">Reports from the field</h2>
 
       <article v-for="p in papers" :key="p.title" class="paper-row">
-        <img :src="p.image" :alt="p.title" loading="lazy" class="paper-thumb" />
+        <img :src="base +p.image" :alt="p.title" loading="lazy" class="paper-thumb" />
         <div class="paper-info">
           <span class="paper-year">{{ p.year }}</span>
           <h3>{{ p.title }}</h3>
@@ -38,7 +40,7 @@ const papers = [
           </div>
         </div>
         <div class="paper-actions">
-          <a v-if="p.report" class="button button-primary" :href="p.report" target="_blank" rel="noreferrer">Report</a>
+          <a v-if="p.report" class="button button-primary" :href="base +p.report" target="_blank" rel="noreferrer">Report</a>
           <a v-if="p.code" class="button button-secondary" :href="p.code" target="_blank" rel="noreferrer">Code</a>
         </div>
       </article>
