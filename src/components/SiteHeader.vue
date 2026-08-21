@@ -20,7 +20,7 @@
         <div class="hero-actions">
           <a class="button button-primary" href="#contact">Get in touch</a>
           <a class="button button-secondary" href="https://github.com/maegonz" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="button button-secondary" href="https://linkedin.com/in/antonymanuel" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="button button-secondary" href="https://www.linkedin.com/in/antony-manuel-b3364223a/" target="_blank" rel="noreferrer">LinkedIn</a>
           <a class="button button-secondary" href="/doc/resume_Antony_MANUEL.pdf" target="_blank" rel="noreferrer">Resume</a>
         </div>
       </div>
