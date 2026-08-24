@@ -34,6 +34,7 @@ const papers = [
         <div class="paper-info">
           <span class="paper-year">{{ p.year }}</span>
           <h3>{{ p.title }}</h3>
+          <h1><i>Report still in progress....</i></h1>
           <p class="paper-desc">{{ p.description }}</p>
           <div class="paper-tags">
             <span v-for="t in p.tags" :key="t">{{ t }}</span>

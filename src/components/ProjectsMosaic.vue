@@ -42,7 +42,7 @@ const projects = [
     title: 'M1 Thesis on Adversarial Detection Methods',
     image: 'figures/m1_internship_first_page.png',
     tags: ['Explainability', 'Adversarial Examples', 'Computer Vision'],
-    link: 'https://github.com/maegonz/Generative-Adversarial-Networks',
+    link: 'doc/m1_internship.pdf',
   },
 ]
 </script>
